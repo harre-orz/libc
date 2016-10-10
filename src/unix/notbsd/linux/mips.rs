@@ -524,6 +524,8 @@ pub const F_SETLKW: ::c_int = 7;
 
 pub const SFD_NONBLOCK: ::c_int = 0x80;
 
+pub const TFD_NONBLOCK: ::c_int = 0x80;
+
 pub const TCGETS: ::c_ulong = 0x540d;
 pub const TCSETS: ::c_ulong = 0x540e;
 pub const TCSETSW: ::c_ulong = 0x540f;

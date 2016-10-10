@@ -575,6 +575,8 @@ pub const SEEK_HOLE: ::c_int = 4;
 
 pub const SFD_NONBLOCK: ::c_int = 0x0800;
 
+pub const TFD_NONBLOCK: ::c_int = 0x800;
+
 pub const TCSANOW: ::c_int = 0;
 pub const TCSADRAIN: ::c_int = 1;
 pub const TCSAFLUSH: ::c_int = 2;

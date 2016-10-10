@@ -158,6 +158,7 @@ fn main() {
         cfg.header("mqueue.h");
         cfg.header("ucontext.h");
         cfg.header("sys/signalfd.h");
+        cfg.header("sys/timerfd.h");
         cfg.header("sys/xattr.h");
         cfg.header("sys/ipc.h");
         cfg.header("sys/msg.h");

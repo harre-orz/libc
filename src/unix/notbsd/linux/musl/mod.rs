@@ -164,6 +164,8 @@ pub const EFD_NONBLOCK: ::c_int = ::O_NONBLOCK;
 
 pub const SFD_NONBLOCK: ::c_int = ::O_NONBLOCK;
 
+pub const TFD_NONBLOCK: ::c_int = ::O_NONBLOCK;
+
 pub const TCSANOW: ::c_int = 0;
 pub const TCSADRAIN: ::c_int = 1;
 pub const TCSAFLUSH: ::c_int = 2;

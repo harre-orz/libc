@@ -217,6 +217,11 @@ s! {
         pub msgtql: ::c_int,
         pub msgseg: ::c_ushort,
     }
+
+    pub struct itimerspec {
+        pub it_interval: ::timespec,
+        pub it_value: ::timespec,
+    }
 }
 
 pub const ABDAY_1: ::nl_item = 0x20000;
@@ -524,6 +529,9 @@ pub const SYNC_FILE_RANGE_WAIT_AFTER: ::c_uint = 4;
 
 pub const EAI_SYSTEM: ::c_int = -11;
 
+pub const TFD_CLOEXEC: ::c_int = 0o2000000;
+pub const TFD_TIMER_ABSTIME: ::c_int = 1 << 0;
+
 f! {
     pub fn CPU_ZERO(cpuset: &mut cpu_set_t) -> () {
         for slot in cpuset.bits.iter_mut() {
@@ -726,6 +734,14 @@ extern {
                            nbytes: ::off64_t, flags: ::c_uint) -> ::c_int;
     pub fn getifaddrs(ifap: *mut *mut ::ifaddrs) -> ::c_int;
     pub fn freeifaddrs(ifa: *mut ::ifaddrs);
+
+    pub fn timerfd_create(clkid: ::c_int, flags: ::c_int) -> ::c_int;
+    pub fn timerfd_settime(fd: ::c_int,
+                           flags: ::c_int,
+                           new_value: *const ::itimerspec,
+                           old_value: *mut ::itimerspec) -> ::c_int;
+    pub fn timerfd_gettime(fd: ::c_int,
+                           curr_value: *mut ::itimerspec) -> ::c_int;
 }
 
 cfg_if! {
